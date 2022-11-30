@@ -5,6 +5,8 @@ posts = os.listdir("posts")
 posts.sort()
 posts.reverse()
 
+posts = list(filter(lambda x: "~" not in x, posts))
+
 def read_file(path):
     with open(path) as f:
         return f.read()
